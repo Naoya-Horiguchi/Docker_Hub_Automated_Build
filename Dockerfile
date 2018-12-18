@@ -18,8 +18,7 @@ RUN SGX_SDK_URL="https://download.01.org/intel-sgx/linux-2.3.1/ubuntu18.04/sgx_l
   && rm -f /tmp/sgx_linux_x64_sdk.bin \
   && sudo ln -s /opt/intel/sgxsdk/environment /etc/profile.d/intel-sgxsdk.sh
 
-ARG GOMETALINTER_VER=$(curl -s https://api.github.com/repos/alecthomas/gometalinter/releases/latest | jq -r ".tag_name")
-RUN GOMETALINTER_URL="https://github.com/alecthomas/gometalinter/releases/download/$(GOMETALINTER_VER)/gometalinter-*-linux-amd64.tar.gz" \
-  && sudo mkdir /opt/gometalinter \
-  && curl -L $GOMETALINTER_URL | sudo tar --strip-components=1 -C /opt/gometalinter -xzf -
-COPY gometalinter.sh /etc/profile.d
+### RUN GOMETALINTER_URL="https://github.com/alecthomas/gometalinter/releases/download/$(GOMETALINTER_VERSION)/gometalinter-*-linux-amd64.tar.gz" \
+###   && sudo mkdir /opt/gometalinter \
+###   && curl -L $GOMETALINTER_URL | sudo tar --strip-components=1 -C /opt/gometalinter -xzf -
+### COPY gometalinter.sh /etc/profile.d

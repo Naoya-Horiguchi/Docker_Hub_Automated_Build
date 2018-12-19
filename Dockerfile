@@ -21,4 +21,5 @@ RUN SGX_SDK_URL="https://download.01.org/intel-sgx/linux-2.3.1/ubuntu18.04/sgx_l
 COPY install_latest_gometalinter.sh /tmp/install_latest_gometalinter.sh
 RUN sudo apt-get install -y jq \
   && bash /tmp/install_latest_gometalinter.sh
+
 COPY gometalinter.sh /etc/profile.d
